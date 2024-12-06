@@ -1,0 +1,137 @@
+body{
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+/* header */
+header{
+    background-color: #181E34;
+}
+header nav{
+    height: 114px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu__container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.header-btn{
+    width: 113px;
+    height: 48px;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+    color: #2766AE;
+}
+/* main */
+main{
+    background: #181E34;
+}
+.section-one{
+    background: url('/img/banner1.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+}
+.name__section{
+    text-align: center;
+    font-size: 40px;
+    padding: 100px 0;
+}
+.container__one{
+    display: flex;
+    justify-content: space-around;
+}
+.text{
+    width: 430px;
+    font-size: 16px;
+    line-height: 150%;
+}
+.text p span{
+    text-transform: uppercase;
+    color: #2766AE;
+    font-weight: 700;
+}
+.container__btn{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.container__btn button{
+    width: 320px;
+    height: 56px;
+    border-radius: 30px;
+    background-color: #2766AE;
+}
+
+.section-two h2{
+    text-align: center;
+    font-size: 40px;
+    padding: 40px 0 20px;
+}
+.text_section__two{
+    text-align: center;
+    line-height: 150%;
+}
+.container__blocks{
+    max-width: 70%;
+    margin: 30px auto;
+}
+.block{
+    margin: 20px 0 20px 50px;
+    display: inline-block;
+    text-align: center;
+    align-content: center;
+    width: 200px;
+    height: 140px;
+    background-color: #2766AE;
+    border: 1px solid #0A3753;
+    border-radius: 20px;
+}
+.block h6{
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 22px;
+}
+.block p{
+    line-height: 150%;
+}
+.block__btn{
+    display: flex;   
+    justify-content: center;
+}
+.section-two button{
+    width: 436px;
+    height: 56px;
+    background-color: #2766AE;
+    margin: 20px 0 70px;
+    border-radius: 30px;
+}
+
+/* footer */
+footer{
+    height: 361px;
+    background-color: #181E34;
+    border-top: 1px solid #323952;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+}
+.footer__logo{
+    width: 267px;
+}
+.footer__logo img{
+    margin-bottom: 30px;
+} 
+.name__menu{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.footer__nav ul li {
+    padding: 10px 0;
+}
+
+
+
