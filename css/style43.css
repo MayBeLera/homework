@@ -30,7 +30,7 @@ main{
     background: #181E34;
 }
 .section-one{
-    background: url('.//img/banner1.png') no-repeat;
+    background: url('../img/banner1.png') no-repeat;
     background-position: center;
     background-size: cover;
     height: 500px;
