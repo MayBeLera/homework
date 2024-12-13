@@ -1,0 +1,27 @@
+p{
+    font-size: 3vh;
+    line-height: 120%;
+}
+body{
+    background: rgb(53, 52, 52);
+    color: white;
+}
+.container{
+    background-color: grey;
+    min-height: 100px;
+    border-radius: 20px;
+    position: fixed;
+    left: 50%;
+    top:auto;
+    right: 50px;
+    bottom: 100px;
+}
+.circle{
+    background-color: brown;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: -30px;
+    left: 100px;
+}
