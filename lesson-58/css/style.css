@@ -20,19 +20,22 @@ body{
 }
 .under-line{
     height: 30px;
-    width:  800px;
     position: absolute;
     top: -30%;
-    left: -80%;
-    transition: all delay 4s ease-out;
+    left: -50%;
+    width: 0;
+    transition: all 4s;
 }
 p{
     margin: auto ;
     opacity: 0;
-    transition: all 3s .1s;
+    transition: all .3s .5s;
 }
 .block:hover .under-line{
     background: white;
+    left: -50%;
+    right: 0;
+    width: 200%;
 }
 .block:hover p{
     opacity: 1;
