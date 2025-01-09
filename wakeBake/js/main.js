@@ -1,11 +1,103 @@
-const btnBurger = document.querySelector('.burger-icon');
-const body = document.body;
-const link = document.querySelectorAll('.nav__link')
+(function(){
+    // Бургер меню
+    document.addEventListener('click', burgerInit)
 
-btnBurger.addEventListener('click', () => {
-    body.classList.toggle('body--opened-menu')
-})
+    function burgerInit(e) {
+        
+        const burgerIcon = e.target.closest('.burger-icon')
+        const burgerNavLink = e.target.closest('.bav__link')
 
-link.addEventListener('click', () => {
-    body.classList.remove('body--opened-menu')
-})
+
+        if(!burgerIcon && !burgerNavLink) return
+
+        if(document.documentElement.clientWidth > 900) return
+
+
+        if(!document.body.classList.contains('body--opened-menu')){
+            document.body.classList.add('body--opened-menu')
+        }else{
+            document.body.classList.remove('body--opened-menu')
+        }
+        
+    }
+
+
+    // Модальное окно
+    const modal = document.querySelector('.modal');
+    const modalButton = document.querySelector('.about__img-button');
+    
+    modalButton.addEventListener('click', openModal)
+    
+    function openModal (e){
+        e.preventDefault()
+        document.body.classList.toggle('body--opened-modal')
+    }
+
+    modal.addEventListener('click', closeModal);
+
+    function closeModal(e){
+        e.preventDefault()
+        const target = e.target
+
+        if (target.closest('.modal__cancel') || target.classList.contains('modal')){
+            document.body.classList.remove('body--opened-modal')
+        }
+    }
+
+
+
+    // Табы, переключатели между аккордионами
+    const tabControls = document.querySelector('.tab-controls')
+
+    tabControls.addEventListener('click', toggleTab)
+
+    function toggleTab(e){
+
+        const  tabControl = e.target.closest('.tab-controls__link')
+
+        if(!tabControl) return
+        e.preventDefault()
+        if(tabControl.classList.contains('tab-controls__link--active')) return
+
+        const tabContentID = tabControl.getAttribute('href')
+        const tabContent = document.querySelector(tabContentID)
+        const activeControl = document.querySelector('.tab-controls__link--active')
+        const activeContent = document.querySelector('.tab-content--show')
+        
+        if(activeControl){
+            activeControl.classList.remove('tab-controls__link--active')
+        }
+        if(activeContent){
+            activeContent.classList.remove('tab-content--show')
+        }
+        
+        tabControl.classList.add('tab-controls__link--active')
+        tabContent.classList.add('tab-content--show')
+
+
+        
+    }
+
+    // Аккордион
+    const accordionLists = document.querySelectorAll('.accordion-list');
+
+    accordionLists.forEach( el => {
+
+        el.addEventListener('click', (e) => {
+
+            const accordionControl = e.target.closest('.accordion-list__control');
+            if(!accordionControl) return
+            const accordionItem = accordionControl.parentElement;
+            const accordionContent = accordionControl.nextElementSibling;
+
+            accordionItem.classList.toggle('accordion-list__item--opened');
+
+            if(accordionItem.classList.contains('accordion-list__item--opened')){
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px'
+            } else{
+                accordionContent.style.maxHeight = null;
+            }
+
+        })
+    })
+})()
