@@ -16,7 +16,8 @@ body{
     line-height: 1.5;
     color: var(--general-text);
 }
-.body--opened-menu{
+.body--opened-menu,
+.body--opened-modal{
     overflow: hidden;
 }
 .wrapper{
