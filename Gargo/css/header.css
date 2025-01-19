@@ -1,0 +1,181 @@
+/* ----------------------------------------------------------------------------------------------------- */
+.header {
+}
+.header__inner {
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 97px;
+    line-height: 1.46;
+}
+.header__logo {
+    max-width: 172px;
+}
+.header__logo img{
+    width: 100%;
+}
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 97px;
+    position: relative;
+}
+.nav {
+}
+.nav__list {
+    display: flex;
+    gap: 40px;
+}
+.nav__item{
+    position: relative;
+}
+.nav__link{
+}
+.nav__link::before,
+.nav__link::after{
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    transition: all .4s ease;
+    opacity: 0;
+}
+.nav__link::before{
+    top: -5px;
+    right: 0;
+    border-top: 3px solid var(--accent-color);
+    transform: translate(-100%, 50%);
+}
+.nav__link::after{
+    left: 0;
+    bottom: -5px;
+    border-bottom: 3px solid var(--accent-color);
+    transform: translate(100%, -50%);
+}
+.nav__link:hover::before,
+.nav__link:hover::after{
+    transform: translate(0,0);
+    opacity: 1;
+}
+.header__button{
+    height: 50px;
+}
+.header__button path,
+.header__button {
+    transition: all .4s;
+}
+.header__button:hover{
+    transform: scale(1.1);
+}
+.header__button:hover path{
+    fill: var(--general-text);
+}
+
+
+
+/* -------------- */
+.header__modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00000097;
+    padding: 10px;
+
+    z-index: 11;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s;
+}
+.modal__window {
+    background: var(--accent-bg);
+    padding: 48px 50px 41px;
+    border-radius: 20px;
+    position: relative;
+}
+.modal__cancel {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+}
+.modal__cancel path{
+    transition: all .3s;
+}
+.modal__cancel:hover path{
+    fill: var(--general-text);
+}
+.modal-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.26;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.modal-text {
+    max-width: 513px;
+    font-size: 17px;
+    line-height: 1.26;
+    margin-bottom: 27px;
+}
+.form {
+    max-width: 526px;
+}
+.form__label{
+    font-size: 15px;
+    line-height: 1.26;
+}
+.form__input,
+.field__input{
+    width: 100%;
+    border-radius: 10px;
+    padding: 19px 20px;
+    margin: 6px 0 20px;
+}
+.form__input::placeholder{
+    font-size: 15px;
+    color: #CBCBCB;
+}
+.field {
+}
+.fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.field__label{
+    max-width: 248px;
+    width: 100%;
+}
+.field__input::placeholder{  
+    line-height: 1.26;
+    font-size: 15px;
+    color: #CBCBCB;
+}
+.form__btn {
+    max-width: 253px;
+    height: 68px;
+}
+.form__btn path{
+    transition: all .4s;
+}
+.form__btn:hover path{
+    fill: var(--general-text);
+}
+.form__texarea{
+    width: 100%;
+    height: 124px;
+    padding: 19px 20px;
+    border-radius: 10px;
+    margin:6px 0 63px;
+}
+.form__texarea::placeholder{
+    line-height: 1.26;
+    font-size: 15px;
+    color: #CBCBCB;    
+}
+.body--opened-modal .header__modal{
+    opacity: 1;
+    visibility: visible;
+}
