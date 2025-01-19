@@ -137,67 +137,44 @@ new Swiper('.services__slider', {
 });
 
 
-    // Аккордион
-    const accordionLists = document.querySelectorAll('.accordion-list');
+// Аккордион
+const accordionLists = document.querySelectorAll('.accordion-list');
 
-    accordionLists.forEach(el => {
+accordionLists.forEach(el => {
 
-        el.addEventListener('click', (e) => {
+    el.addEventListener('click', (e) => {
 
-            const accordionList = e.currentTarget
-            const accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened')
-            const accordionOpenedContent = accordionList.querySelector('.accordion-list__item--opened .accordion-list__content')
+    const accordionList = e.currentTarget
+    const accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened')
+    const accordionOpenedContent = accordionList.querySelector('.accordion-list__item--opened .accordion-list__content')
 
-            const accordionControl = e.target.closest('.accordion-list__control');
-            if (!accordionControl) return
-            e.preventDefault()
-            const accordionItem = accordionControl.parentElement;
-            const accordionContent = accordionControl.nextElementSibling;
+    const accordionControl = e.target.closest('.accordion-list__control');
+        if (!accordionControl) return
+        e.preventDefault()
+        const accordionItem = accordionControl.parentElement;
+        const accordionContent = accordionControl.nextElementSibling;
 
-            if (accordionOpenedItem && accordionItem != accordionOpenedItem) {
-                accordionOpenedItem.classList.remove('accordion-list__item--opened');
-                accordionOpenedContent.style.maxHeight = null;
-            }
+        if (accordionOpenedItem && accordionItem != accordionOpenedItem) {
+            accordionOpenedItem.classList.remove('accordion-list__item--opened');
+            accordionOpenedContent.style.maxHeight = null;
+        }
             accordionItem.classList.toggle('accordion-list__item--opened');
 
-            if (accordionItem.classList.contains('accordion-list__item--opened')) {
-                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-            } else {
-                accordionContent.style.maxHeight = null;
-            }
-
-        });
+        if (accordionItem.classList.contains('accordion-list__item--opened')) {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+        } else {
+            accordionContent.style.maxHeight = null;
+        }
 
     });
 
+});
 
 
 
 
 
-  // Переключение страниц заявки
-  
-  
-  /*
-  const btnNext = document.querySelector('.btn-next');
-  
-  const startPage = document.querySelector('.start-page');
-  const centerPage = document.getElementById('calculation__form');
-
-    btnNext.addEventListener('click', nextPage)
-
-
-  function nextPage(){
-    startPage.classList.add('window-none'),
-    centerPage.classList.remove('window-none')
-  }
-
-
-  const btnPrev = document.querySelector('.btn-prev');
-   */
-
-
-   // Маска для телефона
-   const inputsTel = document.querySelectorAll('input[type="tel"]');
-   const im = new Inputmask('+7 (999) 999-99-99')
-   im.mask(inputsTel)
+// Маска для телефона
+const inputsTel = document.querySelectorAll('input[type="tel"]');
+const im = new Inputmask('+7 (999) 999-99-99')
+im.mask(inputsTel)
